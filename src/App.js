@@ -2,6 +2,12 @@ import React, {useState, useEffect} from "react";
 import "./App.css";
 import axios from "axios";
 import Card from "./Card"
+import styled from "styled-components"
+
+const Page = styled.div`
+background-color: black;
+`
+
 function App() {
  const [cardData, setCardData] = useState([])
   useEffect(() =>{
@@ -20,7 +26,12 @@ function App() {
 
   return (
     <div className="App">
-      <Card title={cardData.title} date={cardData.date} description={cardData.explanation} imgUrl={cardData.url} />
+      <Page>
+        <Card title={cardData.title} 
+        date={cardData.date} 
+        description={cardData.explanation} 
+        imgUrl={cardData.url} />
+      </Page>
     </div>
   );
 }
